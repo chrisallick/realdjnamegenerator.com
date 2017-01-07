@@ -1,0 +1,116 @@
+html, body { width: 100%; height: 100%; background-color: #70eeca; }
+
+@font-face { font-family: "pr"; src: url("../font/pr.ttf"); }
+@font-face { font-family: "pb"; src: url("../font/pb.ttf"); }
+
+* { -webkit-text-size-adjust: none; margin: 0; padding: 0; outline: none; }
+
+#wrapper { width: 100%; min-width: 1085px; height: 100%; min-height: 680px; opacity: 0;  position: relative; }
+
+#wrapper .left { width: 352px; float: left; }
+#wrapper .left a.logo { display: block; width: 255px; height: 141px; position: relative; margin: 44px 0px 40px 38px; }
+#wrapper .left a.logo img { width: 100%; height: 100%; }
+
+#wrapper .right { width: 496px; margin: 0 auto; position: relative; }
+
+@media (max-width: 1197px) {
+	#wrapper .right {
+		margin: 0;
+		float: left;
+	}
+}
+
+#create .copy { height: 191px; position: relative; margin-bottom: 50px; }
+#create .copy p { position: absolute; bottom: 0px; left: 0px; width: 425px; font: normal 17px "pr"; color: #8024f7; line-height: 28px; }
+
+#tape { width: 494px; height: 322px; padding-top: 39px; background: url("../img/tape.png") top left no-repeat; position: relative; background-size: 494px 322px; margin-bottom: 50px; }
+#tape form .submit { display: none; }
+#tape .wheel { width: 98px; height: 98px; position: absolute; top: 134px; left: 68px; background: url("../img/tapewheel.png") top left no-repeat; background-size: 100% 100%;
+    -webkit-animation: spin 44s linear infinite;
+    -moz-animation: spin 44s linear infinite;
+    animation: spin 44s linear infinite;
+}
+#tape .wheel.two { left: 328px; }
+#tape .material { width: 97px; height: 73px; position: absolute; top: 147px; left: 155px; background: url("../img/tapematerial.png") top left no-repeat; background-size: 100% 100%; 
+    -webkit-animation: slide 44s linear infinite;
+    -moz-animation: slide 44s linear infinite;
+    animation: slide 44s linear infinite;
+}
+
+#tape .first, #tape .last { height: 39px; background-color: white; width: 436px; margin: 0px auto 7px auto; }
+#tape .first p, #tape .last p { float: left; font: normal 26px "pb"; color: #8024f7; padding-left: 10px; }
+#tape .first input, #tape .last input { text-align: left; float: left; width: 355px; height: 39px; outline: none; font: normal 26px "pr"; color: #8024f7;  padding-left: 10px; border: none; }
+
+@-moz-keyframes spin {
+	0% { -moz-transform: rotate(0deg); }
+	50% { -moz-transform: rotate(360deg); }
+	100% { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	50% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(0deg); }
+}
+@keyframes spin {
+	0% { -webkit-transform: rotate(0deg); transform:rotate(0deg); }
+	50% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+	100% { -webkit-transform: rotate(0deg); transform:rotate(0deg); }
+}
+
+@-moz-keyframes slide {
+	0% { left: 155px; }
+	50% { left: 243px; }
+	100% { left: 155px; }
+}
+@-webkit-keyframes slide {
+	0% { left: 155px; }
+	50% { left: 243px; }
+	100% { left: 155px; }
+}
+@keyframes slide {
+	0% { left: 155px; }
+	50% { left: 243px; }
+	100% { left: 155px; }
+}
+
+#drop { opacity: .3; transform: scale(1); width: 116px; height: 116px; border-radius: 50% 50%; background-color: #8024f7; /*position: absolute; bottom: 38px; left: calc(50% - (145px / 2));*/ }
+#drop.on { opacity: 1; cursor: pointer;  }
+#drop.on:hover { transform: scale(.95); opacity: 1; }
+#drop.on:active { transform: scale(.9); opacity: 1; }
+#drop p { font: normal 30px "pb"; color: white; text-align: center; width: 100%; position: absolute; top: 35px;
+	transform: rotate(-16deg);
+}
+
+#loading { display: none; opacity: 0; }
+#loading .copy { height: 191px; position: relative; margin-bottom: 20px; }
+#loading .copy p { position: absolute; bottom: 0px; left: 0px; width: 425px; font: normal 17px "pr"; color: #8024f7; line-height: 28px; }
+#loading .loading { width: 420px; height: 420px; background: url("../img/loading.png") center center no-repeat; border-radius: 50% 50%; border: 210px solid #70eeca; background-size: 463px 463px; margin: 0 auto; }
+
+#label { display: none; opacity: 0; }
+#label .copy { height: 191px; position: relative; margin-bottom: 50px; }
+#label .copy p { position: absolute; bottom: 0px; left: 0px; width: 425px; font: normal 17px "pr"; color: #8024f7; line-height: 28px; }
+#label .djbooth { width: 492px; height: 424px; background: url("../img/djbooth.png") top left no-repeat; background-position: 0px 0px; padding-top: 56px; background-size: 984px 424px; margin: 0 auto; }
+#label .djbooth.flip { background-position: -492px 0px; }
+#label .djbooth p.name { font: normal 44px "pb"; color: #8024f7; text-align: center; width: 450px; margin: 0 auto; line-height: 55px; }
+
+#about { display: none; position: absolute; left: 43px; top: 120px; }
+#about .copy { height: 246px; position: relative; margin-bottom: 100px; }
+#about .copy p { position: absolute; bottom: 0px; left: 0px; width: 545px; font: normal 28px "pr"; color: #8024f7; line-height: 30px; }
+#about .copy a { color: #8024f7; text-decoration: underline; }
+#wrapper a.close { display: none; position: absolute; top: 0px; right: 38px; font: normal 80px "pr"; color: #8024f7;
+	transform: rotate(45deg);
+}
+
+#footer { position: absolute; bottom: 38px; left: 0px; width: 100%; height: 45px; }
+#footer .links { position: absolute; top: 3px; left: 38px; }
+#footer .links a { margin-right: 40px; font: normal 28px "pb"; color: #8024f7; border-bottom: 3px solid #8024f7; display: block; float: left; height: 43px; }
+#footer .links .goback { opacity: .3; }
+#footer .links .goback.on { opacity: 1; }
+#footer .links .about { opacity: 1; }
+#footer .links .about.off { opacity: .3; }
+#footer .social { position: absolute; top: 0px; right: 38px; width: 128px; }
+#footer .social a { margin-right: 38px; float: left; width: 45px; height: 45px; }
+#footer .social a img { width: 100%; height: 100%; }
+#footer .social a:last-child { margin: 0; }
+
+
