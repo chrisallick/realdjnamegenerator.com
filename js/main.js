@@ -4,6 +4,12 @@ function drop() {
 
 	if( first != "" ) {
 		stage = 2;
+
+		if( bSound ) {
+			sfx.currentTime = 0;
+			sfx.play();			
+		}
+
 		$("#footer .links .about").addClass("off");
 		
 		$("#create").animate({
@@ -126,6 +132,11 @@ $(document).ready(function() {
 	});
 
 	$("#footer .about").click(function() {
+		if( bSound ) {
+			sfx.currentTime = 0;
+			sfx.play();			
+		}
+
 		if( stage == 0 ) {
 			$("#create").hide();
 		} else if( stage == 3 ) {
@@ -133,9 +144,11 @@ $(document).ready(function() {
 		}
 		
 		$("#about, #wrapper .close").css("display","block");
+		$("#footer .about").hide();
 	});
 
 	$("#wrapper .close").click(function() {
+		$("#footer .about").show();
 		$("#about, #wrapper .close").hide();
 		if( stage == 0 ) {
 			$("#create").show();
@@ -152,11 +165,10 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("#footer .social a, #footer .about").click(function(){
+	$("#footer .social a").click(function(){
 		if( bSound ) {
 			sfx.currentTime = 0;
 			sfx.play();			
 		}
-
 	});
 });
